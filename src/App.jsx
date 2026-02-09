@@ -1,14 +1,19 @@
 import { createRoot } from "react-dom/client";
 import Order from "./Order";
 import PizzaOfTheDay from "./PizzaOfTheDay";
+import Header from "./Header";
+import {CartContext} from "./contexts.jsx";
+
 
 const App = () => {
   return (
+    <CartContext.Provider value={[[], function() {}]}>
     <div>
-      <h1 className="logo">Padre Gino's Pizza</h1>
+      <Header />
       <Order />
       <PizzaOfTheDay />
     </div>
+    </CartContext.Provider>
   );
 };
 
